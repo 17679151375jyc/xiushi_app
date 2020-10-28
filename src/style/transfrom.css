@@ -1,0 +1,29 @@
+.page{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 14.5vw;
+    z-index: 10;
+    overflow: hidden;
+    background-color: #FAFAFA;
+}
+
+.slide-fade-enter-active {
+    transition: all .3s ease;
+}
+.slide-fade-leave-active {
+    transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to{
+    transform: translateX(100vw);
+}
+.top_bottom-enter-active {
+    transition: all .3s ease;
+}
+.top_bottom-leave-active {
+    transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.top_bottom-enter, .top_bottom-leave-to{
+    transform: translateY(100vw);
+}
