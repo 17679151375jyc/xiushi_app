@@ -69,6 +69,134 @@ const router = new Router({
                 component: () => import('@/view/home/my')
             }
         ]
+    },{
+        path: '/distribution/distribution',
+        name: 'distribution',
+        meta: {
+            title: '外卖列表',
+            IsPath: false
+        },
+        component: () => import('@/view/distribution/distribution')
+    },{
+        path: '/reserve/reserve',
+        name: 'reserve',
+        meta: {
+            title: '预订',
+            IsPath: false
+        },
+        component: () => import('@/view/reserve/reserve')
+    },{
+        path: '/purchasingAgent/purchasingAgent',
+        name: 'purchasingAgent',
+        meta: {
+            title: '代购',
+            IsPath: false
+        },
+        component: () => import('@/view/purchasingAgent/purchasingAgent')
+    },{
+        path: '/takeAtaxi/takeAtaxi',
+        name: 'takeAtaxi',
+        meta: {
+            title: '找车',
+            IsPath: false
+        },
+        component: () => import('@/view/takeAtaxi/takeAtaxi')
+    },{
+        path: '/wechatMoments/wechatMoments',
+        name: 'wechatMoments',
+        meta: {
+            title: '秀市圈',
+            IsPath: false
+        },
+        component: () => import('@/view/wechatMoments/wechatMoments')
+    },{
+        path: '/personalCenter/coupon',
+        name: 'coupon',
+        meta: {
+            title: '优惠券',
+            IsPath: false
+        },
+        component: () => import('@/view/personalCenter/coupon')
+    },{
+        path: '/personalCenter/address',
+        name: 'address',
+        meta: {
+            title: '收货地址',
+            IsPath: false
+        },
+        component: () => import('@/view/personalCenter/address')
+    },{
+        path: '/personalCenter/collection',
+        name: 'collection',
+        meta: {
+            title: '我的收藏',
+            IsPath: false
+        },
+        component: () => import('@/view/personalCenter/collection')
+    },{
+        path: '/personalCenter/history',
+        name: 'history',
+        meta: {
+            title: '浏览历史',
+            IsPath: false
+        },
+        component: () => import('@/view/personalCenter/history')
+    },{
+        path: '/personalCenter/aboutUs',
+        name: 'aboutUs',
+        meta: {
+            title: '关于我们',
+            IsPath: false
+        },
+        component: () => import('@/view/personalCenter/aboutUs')
+    },{
+        path: '/personalCenter/setUp',
+        name: 'setUp',
+        meta: {
+            title: '设置',
+            IsPath: false
+        },
+        component: () => import('@/view/personalCenter/setUp')
+    },{
+        path: '/order/order',
+        name: 'order',
+        meta: {
+            title: '订单列表',
+            IsPath: false
+        },
+        component: () => import('@/view/order/order')
+    },{
+        path: '/order/orderDetail',
+        name: 'orderDetail',
+        meta: {
+            title: '订单详情',
+            IsPath: false
+        },
+        component: () => import('@/view/order/orderDetail')
+    },{
+        path: '/order/orderDetail',
+        name: 'orderDetail',
+        meta: {
+            title: '商品详情',
+            IsPath: false
+        },
+        component: () => import('@/view/order/orderDetail')
+    },{
+        path: '/order/commodityDetail',
+        name: 'commodityDetail',
+        meta: {
+            title: '商品详情',
+            IsPath: false
+        },
+        component: () => import('@/view/order/commodityDetail')
+    },{
+        path: '/personalData/personalData',
+        name: 'personalData',
+        meta: {
+            title: '我的资料',
+            IsPath: false
+        },
+        component: () => import('@/view/personalData/personalData')
     }]
 })
 // router.beforeEach((to, from, next) => {

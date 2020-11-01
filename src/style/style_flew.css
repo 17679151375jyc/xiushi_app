@@ -108,6 +108,13 @@
     justify-content: center;   
     align-items: flex-start; 
 }
+/* 垂直盒布局水平左对齐，垂直上下对齐 */
+.dis_column_space_start{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;   
+    align-items: flex-start; 
+}
 /* 垂直盒布局水平中对齐，垂直居中分散对齐 */
 .dis_column_around_center{
     display: flex;

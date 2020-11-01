@@ -2,14 +2,19 @@
   <div class="page">
     <div class="dis_row_between_center guanli_css">
       <span>购物车</span>
-      <span @click="guanli" :style="{'color': !guanShow?'red':''}">{{ butText }}</span>
+      <span @click="guanli" :style="{ color: !guanShow ? 'red' : '' }">{{
+        butText
+      }}</span>
     </div>
     <span class="span_shu_css">共3件宝贝</span>
-    <div class="sro_css"  v-if="list.length>0">
+    <div class="sro_css" v-if="list.length > 0">
       <div class="gouwu_css" v-for="(item, index) in list" :key="index">
-        <van-checkbox v-model="item.checked" checked-color="#FCA85F" class="kuang-css">{{
-          item.marketName
-        }}</van-checkbox>
+        <van-checkbox
+          v-model="item.checked"
+          checked-color="#FCA85F"
+          class="kuang-css"
+          >{{ item.marketName }}</van-checkbox
+        >
         <van-card
           style="background-color: #ffffff"
           :price="item.price"
@@ -24,20 +29,13 @@
       </div>
     </div>
     <div v-else>
-        <van-empty description="购物车空空如也"/>
+      <van-empty description="购物车空空如也" />
     </div>
-    <transition name="top_bottom" v-if='list.length>0'>
+    <transition name="top_bottom" v-if="list.length > 0">
       <div class="dis_row_between_center show_box_css">
-        <van-checkbox checked-color="#FCA85F" v-model="showTrue" class="kuang-css" @click="allShow"
-          >全选</van-checkbox
-        >
-        <van-button
-          style="margin-right: 5vw"
-          :type="guanShow ? 'danger' : 'warning'"
-          size="normal"
-          @click="queren"
-          >{{ butText1 }}</van-button
-        >
+        <van-submit-bar :disabled="disShow && !guanShow" :loading="loading" :price="3000" :button-text="butText1" @submit="queren">
+          <van-checkbox checked-color="#FCA85F" v-model="showTrue" @click="allShow">全选</van-checkbox>
+        </van-submit-bar>
       </div>
     </transition>
   </div>
@@ -49,6 +47,8 @@ export default {
   name: "",
   data() {
     return {
+      loading: false,
+      disShow: true,
       butText: "删除",
       butText1: "结算",
       guanShow: false,
@@ -76,7 +76,7 @@ export default {
           checked: false,
           marketName: "超市1",
           name: "珍珠奶茶",
-          describe: "珍珠奶茶的描述",
+          describe: "珍珠奶茶的描述珍珠奶茶的描述",
           img: "https://img.yzcdn.cn/vant/ipad.jpeg",
           pirce: "2.00",
           num: 2,
@@ -88,12 +88,17 @@ export default {
     list: {
       handler: function (val) {
         let show = true;
+        let disShow = true;
         val.forEach((item) => {
           if (!item.checked) {
             show = false;
           }
+          if(item.checked){
+            disShow = false
+          }
         });
         this.showTrue = show;
+        this.disShow = disShow
       },
       deep: true,
     },
@@ -119,26 +124,39 @@ export default {
       });
     },
     queren() {
-      if (!this.guanShow) {
-        console.log('结算');
+      if (!this.guanShow) { 
+        this.loading = true
+        console.log("结算");
         return;
       }
       Dialog.confirm({
         title: "确定删除吗",
-      }).then(() => {
-          console.log('删除');
-        }).catch(() => {});
+      })
+        .then(() => {
+          console.log("删除");
+        })
+        .catch(() => {});
     },
   },
 };
 </script>
 <style scoped>
+>>>.van-card:not(:first-child){
+  margin: 0;
+}
+>>>.van-card__thumb{
+  width: 24vw;
+  height: 24vw;
+}
+>>>.van-submit-bar{
+  position: relative;
+}
 >>> .van-card__title {
   font-size: 3.74vw;
   font-weight: bold;
 }
 >>> .van-stepper {
-  margin-top: -26px;
+  margin-top: -13vw;
 }
 >>> .van-button {
   height: 33px;
@@ -183,16 +201,13 @@ export default {
   height: 85vh;
   overflow-y: scroll;
 }
-.kuang-css {
-  margin-left: 5vw;
-}
 .show_box_css {
   position: absolute;
-  bottom: 0vw;
+  bottom: 0;
   left: 0;
   right: 0;
   border-top: 1px solid #ccc;
   background: #fff;
-  height: 10vw;
+  height: 12vw;
 }
 </style>
