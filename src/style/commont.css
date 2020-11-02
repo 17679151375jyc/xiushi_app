@@ -22,7 +22,7 @@
 .color8{
     color:red;
 }
-.van-nav-bar{
+.van-nav-bar,.van-switch--on{
     background-color: #FCA85F;
 }
 .van-nav-bar__text,.van-nav-bar .van-icon,.van-nav-bar__title{
@@ -30,4 +30,12 @@
 }
 .van-notice-bar {
     height: 7.5vw;
+}
+.van-address-item .van-radio__icon--checked .van-icon{
+    background-color: #FCA85F;
+    border-color: #FCA85F;
+}
+.van-tag--danger,.van-button--danger{
+    background-color: #FCA85F;
+    border-color: #FCA85F;
 }

@@ -1,28 +1,44 @@
 import Vue from 'vue'
 Vue.prototype.caiList = [{
     title: '优惠券',
-    icon:'iconfont iconyouhuiquanquanmian color1'
+    icon:'iconfont iconyouhuiquanquanmian color1',
+    value: 0
 },{
     title: '地址管理',
-    icon:'iconfont icondizhiguanli color2'
-},{
-    title: '我的收藏',
-    icon:'iconfont iconshoucang color3'
-},{
-    title: '浏览历史',
-    icon:'iconfont iconlishi color4'
-},{
+    icon:'iconfont icondizhiguanli color2',
+    value: 1
+},
+// {
+//     title: '我的收藏',
+//     icon:'iconfont iconshoucang color3',
+    // value: 2
+// },
+// {
+//     title: '浏览历史',
+//     icon:'iconfont iconlishi color4',
+    // value: 3
+// },
+{
     title: '晒单分享',
-    icon:'iconfont iconfenxiang color5'
+    icon:'iconfont iconfenxiang color5',
+    value: 4
 },{
     title: '关于我们',
-    icon:'iconfont iconwenhao color6'
+    icon:'iconfont iconwenhao color6',
+    value: 5
+},
+{
+    title: '平台规则',
+    icon:'iconfont iconguizeguanli color3',
+    value: 3
 },{
     title: '设置',
-    icon:'iconfont iconshezhi color7'
+    icon:'iconfont iconshezhi color7',
+    value: 6
 },{
     title: '退出登录',
-    icon:'iconfont icontuichu color8'
+    icon:'iconfont icontuichu color8',
+    value: 7
 }]
 
 Vue.prototype.indexCaiList = [{

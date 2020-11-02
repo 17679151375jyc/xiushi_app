@@ -124,7 +124,16 @@ const router = new Router({
             title: '收货地址',
             IsPath: false
         },
-        component: () => import('@/view/personalCenter/address')
+        component: () => import('@/view/personalCenter/address'),
+        children:[{
+            path:'/personalCenter/addressAdd',
+            name: 'addressAdd',
+            meta: {
+                title: '编辑地址',
+                IsPath: false
+            },
+            component: () => import('@/view/personalCenter/addressAdd'),
+        }]
     },{
         path: '/personalCenter/collection',
         name: 'collection',
@@ -133,6 +142,14 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/personalCenter/collection')
+    },{
+        path: '/personalCenter/rule',
+        name: 'rule',
+        meta: {
+            title: '平台规则',
+            IsPath: false
+        },
+        component: () => import('@/view/personalCenter/rule')
     },{
         path: '/personalCenter/history',
         name: 'history',

@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { Notify } from 'vant';
+import { Toast } from 'vant';
 export default {
   name: "login",
   data() {
@@ -52,7 +52,8 @@ export default {
   methods: {
     toPage() {
       // window.open("http://49.234.22.146/img/logo.png");
-      Notify({ type: 'success', message: '登录成功' });
+      Toast.success('登录成功');
+      localStorage.setItem("flag", 1);
       this.$router.push({ path: "/index/home" });
     },
   },

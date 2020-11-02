@@ -7,7 +7,7 @@
         src="@/assets/img/login_beijing.jpg"
         class="img_header_css"
       />
-      <span class="mingcheng_css">名称</span>
+      <span class="mingcheng_css">偷猪的韩信</span>
     </div>
     <div class="gongge_css">
       <van-grid :column-num="4">
@@ -34,7 +34,7 @@
         class="dis_row_between_center li_css"
         v-for="(item, index) in caiList"
         :key="index"
-        @click="listClick(index)"
+        @click="listClick(item.value)"
       >
         <div class="dis_row_between_center">
           <i :class="item.icon" style="font-size: 4.8vw"></i>
@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import { Dialog, Notify } from "vant";
+import { Dialog, Toast } from "vant";
 export default {
   name: "",
   data() {
@@ -79,7 +79,7 @@ export default {
           this.$router.push({ path: "/personalCenter/collection" });
           break;
         case 3:
-          this.$router.push({ path: "/personalCenter/history" });
+          this.$router.push({ path: "/personalCenter/rule" });
           break;
         case 5:
           this.$router.push({ path: "/personalCenter/aboutUs" });
@@ -93,7 +93,7 @@ export default {
           })
             .then(() => {
               localStorage.setItem("flag", 1);
-              Notify({ type: 'success', message: '退出成功' });
+              Toast.success('退出成功');
               this.$router.push({ path: "/login" });
             })
             .catch(() => {});
@@ -146,7 +146,6 @@ export default {
 }
 .mingcheng_css {
   position: absolute;
-  width: 20vw;
   height: 20vw;
   z-index: 11;
   top: 20vw;

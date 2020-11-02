@@ -52,6 +52,12 @@
     justify-content: space-around;    
     align-items: center;
 }
+.dis_row_end_start{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;    
+    align-items: flex-end;
+}
 /* 水平盒布局水平中对齐，垂直中对齐 */
 .dis_row_center_center{
     display: flex;

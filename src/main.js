@@ -2,6 +2,8 @@ import Vue from 'vue'
 import router from './router/router'
 import App from './App.vue'
 import Vant from 'vant';
+import { Lazyload } from 'vant';
+Vue.use(Lazyload);
 Vue.use(Vant);
 import 'vant/lib/index.css';
 import '@/style/commont.css'
