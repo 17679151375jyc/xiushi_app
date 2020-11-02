@@ -22,7 +22,7 @@
 .color8{
     color:red;
 }
-.van-nav-bar,.van-switch--on{
+.van-nav-bar,.van-switch--on,.van-swipe__indicator--active{
     background-color: #FCA85F;
 }
 .van-nav-bar__text,.van-nav-bar .van-icon,.van-nav-bar__title{

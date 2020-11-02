@@ -21,7 +21,7 @@
     </div>
     <div class="dis_row_between_center conterbox_css colorfont">
       <div>
-        <i class="iconfont icondianpu"></i>
+        <i class="iconfont iconxuzhixiao" style="font-size:3.74vw;color:#555"></i>
         <span style="margin-left: 2vw">购买须知：</span>
       </div>
       <div style="width:67vw">
@@ -35,7 +35,7 @@
         <span class="title2_header_css">20.00</span>
       </div>
       <div class="dis_row_center_center anniu_css">
-        <i class="iconfont iconjiahao"></i>
+        <!-- <i class="iconfont iconjiahao"></i> -->
         <span style="margin-left: 2vw">加入购物车</span>
       </div>
     </div>
