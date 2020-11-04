@@ -16,9 +16,7 @@
       </van-tab>
       <van-tab title="推荐店铺">
         <div class="daohangye_css">
-          <shopBox />
-          <shopBox />
-          <shopBox />
+          <storefront @commodityClick="shopClick"/>
         </div>
       </van-tab>
       <van-tab title="今日特价">
@@ -40,11 +38,15 @@ export default {
   },
   components: {
     shopBox: () => import("@/components/shopBox.vue"),
+    storefront: () => import("@/components/storefront.vue"),
   },
   methods: {
     commodityClick(){
       this.$router.push({path:'/order/commodityDetail'})
-    }
+    },
+    shopClick(){
+      this.$router.push({path:'/order/shopDeteil'})
+    },
   },
 };
 </script>

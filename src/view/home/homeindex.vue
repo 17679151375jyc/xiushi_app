@@ -18,11 +18,11 @@
       </div>
     </div>
     <div class="gongge_css">
-      <van-grid :column-num="5">
+      <van-grid :column-num="4">
         <van-grid-item
           v-for="(item, index) in indexCaiList"
           :key="index"
-          @click="gonggeClick(index)"
+          @click="gonggeClick(item.value)"
         >
           <i :class="item.icon"></i>
           <span>{{ item.title }}</span>

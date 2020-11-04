@@ -7,7 +7,7 @@ const router = new Router({
     routes: [{
         path: '*',
         redirect: '/index/login'
-    },{
+    }, {
         path: '/index/login',
         name: 'login',
         meta: {
@@ -15,7 +15,7 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/index/login')
-    },{
+    }, {
         path: '/index/register',
         name: 'register',
         meta: {
@@ -23,7 +23,7 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/index/register')
-    },{
+    }, {
         path: '/index/forget',
         name: 'forget',
         meta: {
@@ -31,7 +31,7 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/index/forget')
-    },{
+    }, {
         path: '/index/home',
         name: 'home',
         redirect: '/index/home/homeindex',
@@ -40,7 +40,7 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/index/home'),
-        children:[
+        children: [
             {
                 path: '/index/home/homeindex',
                 name: 'homeindex',
@@ -69,7 +69,7 @@ const router = new Router({
                 component: () => import('@/view/home/my')
             }
         ]
-    },{
+    }, {
         path: '/distribution/distribution',
         name: 'distribution',
         meta: {
@@ -77,7 +77,7 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/distribution/distribution')
-    },{
+    }, {
         path: '/reserve/reserve',
         name: 'reserve',
         meta: {
@@ -85,15 +85,24 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/reserve/reserve')
-    },{
+    }, {
         path: '/purchasingAgent/purchasingAgent',
         name: 'purchasingAgent',
         meta: {
             title: '代购',
             IsPath: false
         },
-        component: () => import('@/view/purchasingAgent/purchasingAgent')
-    },{
+        component: () => import('@/view/purchasingAgent/purchasingAgent'),
+        children: [{
+            path: '/purchasingAgent/purchasingList',
+            name: 'purchasingList',
+            meta: {
+                title: '代购清单',
+                IsPath: false
+            },
+            component: () => import('@/view/purchasingAgent/purchasingList'),
+        }]
+    }, {
         path: '/takeAtaxi/takeAtaxi',
         name: 'takeAtaxi',
         meta: {
@@ -101,7 +110,7 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/takeAtaxi/takeAtaxi')
-    },{
+    }, {
         path: '/wechatMoments/wechatMoments',
         name: 'wechatMoments',
         meta: {
@@ -109,7 +118,7 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/wechatMoments/wechatMoments')
-    },{
+    }, {
         path: '/personalCenter/coupon',
         name: 'coupon',
         meta: {
@@ -117,7 +126,7 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/personalCenter/coupon')
-    },{
+    }, {
         path: '/personalCenter/address',
         name: 'address',
         meta: {
@@ -125,8 +134,8 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/personalCenter/address'),
-        children:[{
-            path:'/personalCenter/addressAdd',
+        children: [{
+            path: '/personalCenter/addressAdd',
             name: 'addressAdd',
             meta: {
                 title: '编辑地址',
@@ -134,7 +143,7 @@ const router = new Router({
             },
             component: () => import('@/view/personalCenter/addressAdd'),
         }]
-    },{
+    }, {
         path: '/personalCenter/collection',
         name: 'collection',
         meta: {
@@ -142,7 +151,7 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/personalCenter/collection')
-    },{
+    }, {
         path: '/personalCenter/rule',
         name: 'rule',
         meta: {
@@ -150,7 +159,7 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/personalCenter/rule')
-    },{
+    }, {
         path: '/personalCenter/history',
         name: 'history',
         meta: {
@@ -158,7 +167,7 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/personalCenter/history')
-    },{
+    }, {
         path: '/personalCenter/aboutUs',
         name: 'aboutUs',
         meta: {
@@ -166,7 +175,7 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/personalCenter/aboutUs')
-    },{
+    }, {
         path: '/personalCenter/setUp',
         name: 'setUp',
         meta: {
@@ -174,7 +183,7 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/personalCenter/setUp')
-    },{
+    }, {
         path: '/order/order',
         name: 'order',
         meta: {
@@ -182,7 +191,7 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/order/order')
-    },{
+    }, {
         path: '/order/orderDetail',
         name: 'orderDetail',
         meta: {
@@ -190,7 +199,7 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/order/orderDetail')
-    },{
+    }, {
         path: '/order/orderDetail',
         name: 'orderDetail',
         meta: {
@@ -198,7 +207,7 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/order/orderDetail')
-    },{
+    }, {
         path: '/order/commodityDetail',
         name: 'commodityDetail',
         meta: {
@@ -206,7 +215,15 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/order/commodityDetail')
-    },{
+    }, {
+        path: '/order/shopDeteil',
+        name: 'shopDeteil',
+        meta: {
+            title: '店铺主页',
+            IsPath: false
+        },
+        component: () => import('@/view/order/shopDeteil')
+    }, {
         path: '/personalData/personalData',
         name: 'personalData',
         meta: {
