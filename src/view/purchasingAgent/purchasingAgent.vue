@@ -10,7 +10,8 @@
     />
     <div class="page_css">
       <van-dropdown-menu>
-        <van-dropdown-item v-model="value1" :options="option1" />
+        <van-dropdown-item v-model="value1" :options="option2" />
+        <van-dropdown-item v-model="value2" :options="option1" />
       </van-dropdown-menu>
       <van-collapse
         v-model="activeNames"
@@ -143,6 +144,15 @@ export default {
   data() {
     return {
       value1: 0,
+      value2: 0,
+      option2:[
+        { text: "全部订单", value: 0 },
+        { text: "我接的订单", value: 1 },
+        { text: "未接订单", value: 2 },
+        { text: "备货的订单", value: 3 },
+        { text: "配送中的订单", value: 3 },
+        { text: "已完成的订单", value: 4 },
+      ],
       option1: [
         { text: "按时间排序", value: 0 },
         { text: "按数量排序", value: 1 },
@@ -153,7 +163,7 @@ export default {
       form: {
         id: "001",
         name: "蒋雨成",
-        phone: 17679151375,
+        phone: 17179151375,
         large: "无特大物品",
         address: "秀市镇-蒋家村委会 蒋家村",
         status: "配货中",
@@ -170,7 +180,9 @@ export default {
     onClickLeft() {
       this.$router.back();
     },
-    onClickRight() {},
+    onClickRight() {      
+      this.$router.push({ path: "/purchasingAgent/purchasingAdd" });
+    },
     pushClick() {
       this.$router.push({ path: "/purchasingAgent/purchasingList" });
     },
@@ -182,17 +194,17 @@ export default {
   background-color: #fafafa;
   border-bottom: 3px solid #fff;
 }
->>> .van-dropdown-menu__bar {
+/* >>> .van-dropdown-menu__bar {
   height: 10vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
 }
->>>.van-dropdown-menu__item{
+>>> .van-dropdown-menu__item {
   margin-right: 8vw;
-}
->>>.van-ellipsis{
+} */
+>>> .van-ellipsis {
   font-size: 3.74vw;
 }
 .page_css {

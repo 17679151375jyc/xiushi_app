@@ -101,6 +101,14 @@ const router = new Router({
                 IsPath: false
             },
             component: () => import('@/view/purchasingAgent/purchasingList'),
+        },{
+            path: '/purchasingAgent/purchasingAdd',
+            name: 'purchasingAdd',
+            meta: {
+                title: '我要找代购',
+                IsPath: false
+            },
+            component: () => import('@/view/purchasingAgent/purchasingAdd'),
         }]
     }, {
         path: '/takeAtaxi/takeAtaxi',
