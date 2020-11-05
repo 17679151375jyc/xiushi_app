@@ -40,25 +40,27 @@
       <div>共：<span>30.00</span>元</div>
     </div>
     <van-popup
+      round
       @close="close"
       v-model="idbuShow"
       position="bottom"
-      style="height: 50%"
+      style="height: 60%"
     >
-      <div class="dis_row_between_center my_gou_css">
-        <span class="yangshi_css">我的购物车</span>
-        <div class="div_gou_css">
-          <span>加</span>
-          <span>5.00</span>
-          <span>元配 送费，一共：</span>
-          <span>30.00</span>
-          <span>元</span>
+      <div class="dis_column_between_center big_box_css">
+        <div class="dis_row_between_center my_gou_css">
+          <span class="yangshi_css">我的购物车</span>
+          <div class="div_gou_css">
+            <span>加</span>
+            <span>5.00</span>
+            <span>元配 送费，一共：</span>
+            <span>30.00</span>
+            <span>元</span>
+          </div>
         </div>
-      </div>
-      <div class="gundong_css">
-        <div class="gouwu_limian_css">
-          <van-empty description="空空如也" />
+        <div class="gundong_css">
+          <!-- <van-empty description="空空如也" /> -->
           <div>
+            <cartList />
             <cartList />
             <cartList />
             <cartList />
@@ -111,7 +113,7 @@ export default {
 >>> .van-popup--bottom {
   z-index: 1000000 !important;
 }
->>>.van-empty__image{
+>>> .van-empty__image {
   height: 35vw;
 }
 .div_box_css {
@@ -150,6 +152,10 @@ export default {
   overflow-y: scroll;
   background-color: #fff;
 }
+.big_box_css {
+  width: 100%;
+  height: 100%;
+}
 .gouwu_css {
   position: fixed;
   left: 2vw;
@@ -171,7 +177,7 @@ export default {
 .my_gou_css {
   width: 96vw;
   padding: 0 2vw;
-  height: 10vw;
+  height: 15vw;
 }
 .yangshi_css {
   font-size: 4vw;
@@ -179,7 +185,7 @@ export default {
   color: #333;
 }
 .div_gou_css {
-  font-size: 2.8vw;
+  font-size: 3.4vw;
   color: #888;
 }
 .div_gou_css span:nth-child(2) {
@@ -192,19 +198,31 @@ export default {
 }
 .gundong_css {
   width: 100%;
-}
-.gouwu_limian_css {
-  width: 100%;
-  height: calc(100vh - 109vw);
+  height: 100%;
   overflow-y: scroll;
 }
 .gouwu_dibu_css {
-  width: 96vw;
-  padding: 0 2vw;
-  height: 10vw;
+  width: 88vw;
+  padding: 0 6vw;
+  height: 20vw;
   background-color: #fafafa;
   border-top: 1px solid #e4e3e3;
-  font-size: 3.74vw;
+  font-size: 4vw;
   color: #888;
+}
+.gouwu_dibu_css span{
+  display: block;
+  width: 23vw;
+  line-height: 7vw;
+  height: 7vw;
+  background-color: #fff;
+  border:1px solid #DEDDDD;
+  border-radius: 10vw;
+  color: #555;
+  text-align: center;
+  font-size: 3.74vw;
+}
+.gouwu_dibu_css span:last-child{
+  border:1px solid #38f;
 }
 </style>

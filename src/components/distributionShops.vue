@@ -39,7 +39,7 @@ export default {
   padding: 2vw;
   border-radius: 2vw;
   margin: 3vw auto;
-  background-color: #fafafa;
+  background-color: #ffffff;
   overflow: hidden;
 }
 .img_css {
@@ -59,15 +59,15 @@ export default {
   text-overflow: ellipsis;
 }
 .dis1 {
-  font-size: 3vw;
+  font-size: 3.74vw;
   font-weight: bold;
 }
 .dis2 {
-  font-size: 3.74vw;
+  font-size: 3.4vw;
   color: #999;
 }
 .dis3 {
-  font-size: 3.74vw;
+  font-size: 3.4vw;
   color: #999;
 }
 .yingye_box_css {

@@ -96,6 +96,6 @@ export default {
   border: 1px solid #FCA85F;
   border-radius: 1vw;
   color: #FCA85F;
-  font-size: 2vw;
+  font-size: 3vw;
 }
 </style>

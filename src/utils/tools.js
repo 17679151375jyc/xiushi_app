@@ -64,34 +64,3 @@ Vue.prototype.indexCaiList = [{
     value: 4,
     icon: 'iconfont iconpengyouquan icon_css color5'
 }]
-
-Vue.prototype.specificationsList = [{
-    name: "大杯",
-    value: 0
-}, {
-    name: "中杯",
-    value: 1
-}, {
-    name: "小杯",
-    value: 2
-}];
-Vue.prototype.spicyList = [{
-    name: "微辣",
-    value: 0
-}, {
-    name: "中辣",
-    value: 1
-}, {
-    name: "特辣",
-    value: 2
-}];
-Vue.prototype.sugarList = [{
-    name: "7分糖",
-    value: 0
-}, {
-    name: "5分糖",
-    value: 1
-}, {
-    name: '无糖',
-    value: 2
-}]

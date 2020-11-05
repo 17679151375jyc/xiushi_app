@@ -8,7 +8,7 @@
       @click-left="onClickLeft"
       @click-right="onClickRight"
     />
-    <div class="page_css">
+    <div class="page_css" id="agent">
       <van-dropdown-menu>
         <van-dropdown-item v-model="value1" :options="option2" />
         <van-dropdown-item v-model="value2" :options="option1" />
@@ -24,9 +24,9 @@
               <div>
                 <span class="xuhao_css">{{ index + 1 }}</span>
               </div>
-              <div>预算<span class="qian_css">49.00</span></div>
+              <div>跑腿费<span class="qian_css">9.00</span></div>
               <div>超市代购</div>
-              <div><span class="qian_css">18</span>件商品</div>
+              <div>共<span class="qian_css">18</span>件</div>
               <div class="color4" @click.stop="pushClick">查看清单</div>
             </div>
           </template>
@@ -44,7 +44,7 @@
               v-model="form.name"
               rows="1"
               autosize
-              label="发起人："
+              label="接货人："
               type="textarea"
             />
             <van-field
@@ -52,7 +52,15 @@
               v-model="form.phone"
               rows="1"
               autosize
-              label="发起人电话："
+              label="接货人电话："
+              type="textarea"
+            />
+            <van-field
+              readonly
+              v-model="form.range"
+              rows="1"
+              autosize
+              label="配送范围："
               type="textarea"
             />
             <van-field
@@ -60,7 +68,7 @@
               v-model="form.address"
               rows="1"
               autosize
-              label="配送地址："
+              label="详细地址："
               type="textarea"
             />
             <van-field
@@ -68,7 +76,15 @@
               v-model="form.budget"
               rows="1"
               autosize
-              label="总共预算："
+              label="总共预算(元)："
+              type="textarea"
+            />
+            <van-field
+              readonly
+              v-model="form.money"
+              rows="1"
+              autosize
+              label="跑腿费(元)："
               type="textarea"
             />
             <van-field
@@ -150,8 +166,8 @@ export default {
         { text: "我接的订单", value: 1 },
         { text: "未接订单", value: 2 },
         { text: "备货的订单", value: 3 },
-        { text: "配送中的订单", value: 3 },
-        { text: "已完成的订单", value: 4 },
+        { text: "配送中的订单", value: 4 },
+        { text: "已完成的订单", value: 5 },
       ],
       option1: [
         { text: "按时间排序", value: 0 },
@@ -165,10 +181,12 @@ export default {
         name: "蒋雨成",
         phone: 17179151375,
         large: "无特大物品",
-        address: "秀市镇-蒋家村委会 蒋家村",
+        range: "秀市镇-蒋家村委会",
+        address: "蒋家村",
         status: "配货中",
         supermarketName: "1家超市",
         budget: "49.00元",
+        money:'9.00',
         startTime: "2020-11-04 10:38:08",
         serviceTime: "2020-11-05 10:00:00",
         surplusTime: "18小时59分",
@@ -190,7 +208,7 @@ export default {
 };
 </script>
 <style scoped>
->>> .van-cell--clickable {
+>>>#agent .van-cell--clickable {
   background-color: #fafafa;
   border-bottom: 3px solid #fff;
 }
@@ -216,7 +234,6 @@ export default {
 .qian_css {
   color: red;
   font-size: 4vw;
-  margin: 0 1vw;
 }
 .qingdan_css {
   width: 40vw;

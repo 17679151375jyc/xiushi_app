@@ -11,6 +11,9 @@ import '@/style/style.css'
 import '@/style/style_flew.css'
 import '@/style/transfrom.css'
 import '@/utils/tools.js'
+import '@/utils/validator.js'
+import '@/utils/datajson.js'
+import '@/utils/common.js'
 Vue.config.productionTip = false
 
 new Vue({

@@ -51,7 +51,7 @@ export default {
   font-size: 3.74vw;
 }
 .wenan_css span:nth-child(2) {
-  font-size: 2vw;
+  font-size: 3vw;
   width: 100%;
   margin: 0.5vw 0;
   color: #888;
@@ -63,10 +63,10 @@ export default {
 }
 .div_qisong_css {
   color: #999;
-  font-size: 2vw;
+  font-size: 3vw;
 }
 .wenan_css span:last-child {
-  font-size: 3.4vw;
+  font-size: 3.74vw;
   color: red;
   margin-right: 1vw;
 }

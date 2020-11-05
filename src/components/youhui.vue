@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="dis_row_between_center youhui_css">
-      <div class="hongquyu_css" :style="{'background-color':colors(types)}">
+      <div class="hongquyu_css" :style="{ 'background-color': colors(types) }">
         <span class="yuandian_css" style="left: -3vw"></span>
         <div class="dis_row_center_center qian_css">
           <span class="fuhao_css">￥：</span>
@@ -11,7 +11,14 @@
       </div>
       <div class="wenziquyu_css">
         <span class="yuandian_css" style="right: -4vw"></span>
-        <div v-if="types != 'hui'" class="liji_css"  :style="{'background-color':colors(types)}">立即使用</div>
+        <div
+          @click="youhuiClick"
+          v-if="types != 'hui'"
+          class="liji_css"
+          :style="{ 'background-color': colors(types) }"
+        >
+          立即使用
+        </div>
         <div class="dis_column_start_start wenan_css">
           <span class="xinren_css">新人专属券</span>
           <div style="margin-left: 3vw">
@@ -30,30 +37,33 @@ export default {
   data() {
     return {};
   },
-  props:{
-      types:{
-          default: 'cheng'
-      }
+  props: {
+    types: {
+      default: "cheng",
+    },
   },
   methods: {
-      colors(type){
-          let str = '#ff8454';
-          switch(type){
-              case 'cheng':
-               str = '#ff8454'
-               break;
-              case 'hong':
-               str = 'red'
-               break;
-              case 'lan':
-               str = '#3388ff'
-               break;
-              case 'hui':
-               str = '#ccc'
-               break;
-          }
-          return str;
+    youhuiClick() {
+      this.$emit('youhuiClick')
+    },
+    colors(type) {
+      let str = "#ff8454";
+      switch (type) {
+        case "cheng":
+          str = "#ff8454";
+          break;
+        case "hong":
+          str = "red";
+          break;
+        case "lan":
+          str = "#3388ff";
+          break;
+        case "hui":
+          str = "#ccc";
+          break;
       }
+      return str;
+    },
   },
 };
 </script>
@@ -68,7 +78,7 @@ export default {
 }
 .hongquyu_css {
   width: 35%;
-  height: 100%;  
+  height: 100%;
   position: relative;
 }
 .wenziquyu_css {

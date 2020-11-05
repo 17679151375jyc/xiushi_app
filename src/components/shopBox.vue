@@ -52,7 +52,7 @@ export default {
   font-size: 3.74vw;
 }
 .wenan_css span:nth-child(2){
-  font-size: 2vw;
+  font-size: 3vw;
   margin: 0.5vw 0;
   color: #888;
 }

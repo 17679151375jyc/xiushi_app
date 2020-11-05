@@ -7,7 +7,7 @@
       @click-left="onClickLeft"
     />
     <div class="beijing_css">
-      <youhui/>
+      <youhui @youhuiClick="youhuiClick"/>
       <youhui/>
       <youhui/>
       <youhui/>
@@ -32,6 +32,10 @@ export default {
     youhui: () => import("@/components/youhui.vue"),
   },
   methods: {
+    youhuiClick(){
+      localStorage.setItem('flag', 1)
+      this.$router.replace({path: '/index/home/homeindex'})
+    },
     onClickLeft() {
       this.$router.back();
     },
