@@ -126,7 +126,7 @@ export default {
     queren() {
       if (!this.guanShow) { 
         this.loading = true
-        console.log("结算");
+        this.$router.push({path:'/personalCenter/settlement'})
         return;
       }
       Dialog.confirm({

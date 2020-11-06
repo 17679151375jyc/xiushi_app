@@ -17,6 +17,7 @@
         v-model="activeNames"
         v-for="(item, index) in 10"
         :key="index"
+        accordion
       >
         <van-collapse-item :name="index">
           <template #title>

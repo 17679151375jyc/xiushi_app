@@ -101,7 +101,7 @@ const router = new Router({
                 IsPath: false
             },
             component: () => import('@/view/purchasingAgent/purchasingList'),
-        },{
+        }, {
             path: '/purchasingAgent/purchasingAdd',
             name: 'purchasingAdd',
             meta: {
@@ -239,6 +239,24 @@ const router = new Router({
             IsPath: false
         },
         component: () => import('@/view/personalData/personalData')
+    }, {
+        path: '/personalCenter/settlement',
+        name: 'settlement',
+        meta: {
+            title: '下单',
+            IsPath: false
+        },
+        component: () => import('@/view/personalCenter/settlement'),
+        children: [
+            {
+                path: '/personalCenter/settlement/address',
+                name: 'address',
+                meta: {
+                    title: '收货地址',
+                    IsPath: false
+                },
+                component: () => import('@/view/personalCenter/address'),
+            }]
     }]
 })
 // router.beforeEach((to, from, next) => {

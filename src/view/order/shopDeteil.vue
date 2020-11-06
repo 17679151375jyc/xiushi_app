@@ -71,7 +71,7 @@
         </div>
         <div class="dis_row_between_center gouwu_dibu_css">
           <span>清空所有</span>
-          <span style="color: #38f">立即下单</span>
+          <span style="color: #38f" @click="pushClick">立即下单</span>
         </div>
       </div>
     </van-popup>
@@ -96,6 +96,9 @@ export default {
     cartList: () => import("@/components/cartList.vue"),
   },
   methods: {
+    pushClick(){
+      this.$router.push({path:'/personalCenter/settlement'})
+    },
     close() {
       this.idbuShow = false;
     },

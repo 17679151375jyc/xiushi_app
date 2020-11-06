@@ -21,7 +21,7 @@
         v-if="type === 'yinliao'"
       >
         <div class="header_box_css">
-          <i class="iconfont iconguige color2"></i>
+          <i class="iconfont iconguige"></i>
           <span class="span_left_css">规格：</span>
         </div>
         <div class="dis_row_start_center contert_box_xss">
@@ -41,7 +41,7 @@
         v-if="type === 'yinliao'"
       >
         <div class="header_box_css">
-          <i class="iconfont iconguige color2"></i>
+          <i class="iconfont icon7 color2"></i>
           <span class="span_left_css">甜度：</span>
         </div>
         <div class="dis_row_start_center contert_box_xss">

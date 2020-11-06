@@ -62,4 +62,21 @@ Vue.prototype.getSuperName = (text) => {
             break;
     }
     return value
+}   
+
+Vue.prototype.songList = ["今天送达", "明日送达", '后日送达'];
+Vue.prototype.getSongName = (text) => {
+    let value = 0;
+    switch (text) {
+        case '今天送达':
+            value = 0
+            break;
+        case '明日送达':
+            value = 1
+            break;
+        case '后日送达':
+            value = 2
+            break;
+    }
+    return value
 }

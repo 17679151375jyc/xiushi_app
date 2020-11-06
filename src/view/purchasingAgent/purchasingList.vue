@@ -9,7 +9,7 @@
     <div class="page_css div_row_end_warp">
       <div class="hezi_css" v-for="(item, index) in 9" :key="index">
         <span class="jiaobiao_css">0{{ index + 1 }}</span>
-        <img class="img_css" src="@/assets/img/login_beijing.jpg" />
+        <img class="img_css" src="@/assets/img/login_beijing.jpg" @click="imgClick(index)"/>
         <div class="miaosu_css">
           <div style="border-bottom: 1px solid #ccc">
             <span class="color8">火腿肠</span>&#12288;×&#12288;<span
@@ -29,13 +29,19 @@
 </template>
 
 <script>
-import { Dialog, Toast } from "vant";
+import { Dialog, Toast, ImagePreview } from "vant";
 export default {
   name: "",
   data() {
     return {};
   },
   methods: {
+    imgClick(index) {
+      ImagePreview({
+        images: [require("@/assets/img/login_beijing.jpg")],
+        startPosition: index,
+      });
+    },
     jiedanClick() {
       Dialog.confirm({
         title: "确定要接单吗",

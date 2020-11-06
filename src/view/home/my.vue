@@ -43,6 +43,12 @@
         <i class="iconfont iconfanhuizuojiantouxiangzuoshangyibuxianxing"></i>
       </div>
     </div>
+    <van-share-sheet
+      v-model="fenxiangShow"
+      title="立即分享给好友"
+      :options="options"
+      @select="onSelect"
+    />
   </div>
 </template>
 
@@ -51,9 +57,23 @@ import { Dialog, Toast } from "vant";
 export default {
   name: "",
   data() {
-    return {};
+    return {
+      fenxiangShow: false,
+      options: [
+        { name: '微信', icon: 'wechat', value: 0 },
+        { name: '微博', icon: 'weibo', value: 1 },
+        { name: '复制链接', icon: 'link', value: 2 },
+        { name: '分享海报', icon: 'poster', value: 3 },
+        { name: '二维码', icon: 'qrcode', value: 4 },
+      ],
+    };
   },
   methods: {
+    onSelect(option){
+      Toast("分享"+ option.name +"成功");
+      console.log("分享"+ option.value +"成功")
+      this.fenxiangShow = false
+    },
     //订单跳转
     orderClick(index) {
       this.$router.push({
@@ -80,6 +100,9 @@ export default {
           break;
         case 3:
           this.$router.push({ path: "/personalCenter/rule" });
+          break;
+        case 4:
+          this.fenxiangShow = true;
           break;
         case 5:
           this.$router.push({ path: "/personalCenter/aboutUs" });

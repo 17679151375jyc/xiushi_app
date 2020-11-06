@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pageA">
     <van-nav-bar
       title="我的收货地址"
       left-text="返回"
@@ -12,6 +12,7 @@
       default-tag-text="默认"
       @add="onAdd"
       @edit="onEdit"
+      @click-item="itemClick"
     />
     <transition name="slide-fade">
       <router-view></router-view>
@@ -55,6 +56,10 @@ export default {
           data: JSON.stringify(item),
         },
       });
+    },
+    itemClick(value){
+      localStorage.setItem('addressData', JSON.stringify(value))
+      this.onClickLeft();
     },
     onClickLeft() {
       this.$router.back();

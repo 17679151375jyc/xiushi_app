@@ -1,9 +1,11 @@
 import Vue from 'vue'
-Vue.prototype.caiList = [{
-    title: '优惠券',
-    icon: 'iconfont iconyouhuiquanquanmian color1',
-    value: 0
-}, {
+Vue.prototype.caiList = [
+//     {
+//     title: '优惠券',
+//     icon: 'iconfont iconyouhuiquanquanmian color1',
+//     value: 0
+// }, 
+{
     title: '地址管理',
     icon: 'iconfont icondizhiguanli color2',
     value: 1
