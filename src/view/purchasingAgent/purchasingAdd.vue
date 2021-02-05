@@ -38,7 +38,7 @@
             clickable
             name="picker"
             :rules="rules"
-            :value="form.range"
+            v-model="form.range"
             label="配送范围："
             placeholder="请选择配送范围"
             @click="rangeShowPicker = true"
@@ -90,7 +90,7 @@
           <van-field
             readonly
             clickable
-            name="picker"
+            name="large"
             :rules="rules"
             :value="form.large"
             label="有无大物件："
